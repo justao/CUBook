@@ -9,4 +9,4 @@ A Book on how to build a mobile-server application.
     * [broadcast](android/broadcast.md)
     * [NDK](android/NDK.md)
 * server
-    * [rails](server/rails)
+    * [rails](server/rails.md)
