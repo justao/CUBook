@@ -1,5 +1,7 @@
 #Butter Knife
 将字段和方法绑定到Android视图，使用注释处理为你生成样板代码。  
+>翻译自[官方简介](http://jakewharton.github.io/butterknife/)
+
 ##简介
 * 在字段上使用@InjectView，杜绝findViewById调用。
 * 使用@InjectViews将多个视图分组。一次actions、setters、properties操作同时作用在所有视图上。  
