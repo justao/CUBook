@@ -1,9 +1,9 @@
 web性能优化：
 ANR要求：Activity对事件响应不超过5秒，BroadcastReceiver中执行时间不超过10秒。
 
-#电量优化
-##监控电量与充电
-###判断当前充电状态
+# 电量优化
+## 监控电量与充电
+### 判断当前充电状态
 BatteryManager会广播一个带有电池与充电详情的Sticky Intent。
 ```
 IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -19,7 +19,7 @@ if(status == BatteryManager.BATTERY_STATUS_CHARGING || status == BatteryManager.
 else{//最小化化更新操作
 }
 ```
-###监测充电状态改变
+### 监测充电状态改变
 ```
 <receiver android:name=".PowerConnectionReceiver">
   <intent-filter>
@@ -42,13 +42,13 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
     }
 }
 ```
-###判断当前电量
+### 判断当前电量
 ```
 int level = battery.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
 int scale = battery.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
 float batteryPct = level / (float)scale;
 ```
-###监测低电量
+### 监测低电量
 ```
 <receiver android:name=".BatteryLevelReceiver">
 <intent-filter>
@@ -58,18 +58,18 @@ float batteryPct = level / (float)scale;
 </receiver>
 ```
 
-##判断监测网络状态
-###判断当前网络状态
+## 判断监测网络状态
+### 判断当前网络状态
 ```
 ConnectivityManager cm =   (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
 NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
 boolean isConnected = activeNetwork.isConnectedOrConnecting();
 ```
-###监测网络切换
+### 监测网络切换
 ```
 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
 ```
-###切换Receiver开启状态
+### 切换Receiver开启状态
 监测到网络断开，只保留ConnectionReceiver,关闭其他所有Receiver
 ```
 ComponentName receiver = new ComponentName(context, myReceiver.class);
