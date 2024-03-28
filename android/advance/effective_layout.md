@@ -1,5 +1,5 @@
-#Effective Layout
-##优化Layout层级
+# Effective Layout
+## 优化Layout层级
 Hierarchy Viewer :在程序运行时分析 Layout  
 Lint:优化代码
 
