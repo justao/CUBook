@@ -1,4 +1,4 @@
-#管理内存
+# 管理内存
 todo：分析内存使用、Systrace、Traceview、StrictMode
 
 Memory Leaks：通常由于在全局成员变量中持有对象引用而导致
